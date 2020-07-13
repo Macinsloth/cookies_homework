@@ -17,7 +17,7 @@ def index():
 @app.route("/calculate", methods = ["POST"])
 def calculate():
     guess = int(request.form.get("guess"))
-    secret_number = int(request.cookie.get("secret_number"))
+    secret_number = int(request.cookies.get("secret_number"))
 
     if guess == secret_number:
         message = "Correct! The secret number is {0}".format(str(secret_number))
